@@ -208,7 +208,7 @@ export default function Portfolio() {
         <div style={{ position:"relative",zIndex:2 }}>
           <div style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.62rem",letterSpacing:"0.35em",color:"rgba(255,255,255,.4)",textTransform:"uppercase",marginBottom:"20px",animation:"slideUp 1s .2s both" }}>
             <span style={{ animation:"blink 1.3s infinite",display:"inline-block",marginRight:"8px" }}>●</span>
-            Available for shoots · Bengaluru, India
+            Available for shoots · Mysore, India
           </div>
           <h1 className="hero-h1" style={{ fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(5rem,14vw,13rem)",lineHeight:.88,letterSpacing:"0.03em",color:"#fff",animation:"slideUp 1s .35s both" }}>
             FLASH<br />
@@ -326,7 +326,7 @@ export default function Portfolio() {
       <footer style={{ padding:"28px 40px",borderTop:"1px solid rgba(255,255,255,.05)" }}>
         <div className="footer-row" style={{ display:"flex",alignItems:"center",justifyContent:"space-between" }}>
           <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.55rem",letterSpacing:"0.15em",color:"rgba(255,255,255,.2)",textTransform:"uppercase" }}>© 2025 Flash N Frame</span>
-          <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.55rem",letterSpacing:"0.15em",color:"rgba(255,255,255,.2)",textTransform:"uppercase" }}>Bengaluru, India</span>
+          <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.55rem",letterSpacing:"0.15em",color:"rgba(255,255,255,.2)",textTransform:"uppercase" }}>Mysore, India</span>
         </div>
       </footer>
 
