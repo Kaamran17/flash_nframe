@@ -277,7 +277,7 @@ export default function Portfolio() {
       <section id="about" ref={aboutRef} style={{ padding:"100px 40px",borderTop:"1px solid rgba(255,255,255,.06)" }}>
         <div className="about-flex" style={{ display:"flex",gap:"80px",alignItems:"center",opacity:aboutVis?1:0,transform:aboutVis?"none":"translateY(30px)",transition:"opacity .9s,transform .9s" }}>
           <div style={{ flexShrink:0,width:"320px",position:"relative" }}>
-            <img src="https://picsum.photos/seed/photographer2025/640/800" alt="photographer"
+            <img src="https://res.cloudinary.com/dvkmuoisa/image/upload/v1773109698/profile1_szuakf.png" alt="photographer"
               style={{ width:"100%",display:"block",filter:"contrast(1.1) brightness(.85)" }} />
             {["tl","tr","bl","br"].map(c=>(
               <div key={c} style={{ position:"absolute",top:c.startsWith("t")?0:"auto",bottom:c.startsWith("b")?0:"auto",left:c.endsWith("l")?0:"auto",right:c.endsWith("r")?0:"auto",width:"20px",height:"20px",borderTop:c.startsWith("t")?"2px solid rgba(255,255,255,.35)":"none",borderBottom:c.startsWith("b")?"2px solid rgba(255,255,255,.35)":"none",borderLeft:c.endsWith("l")?"2px solid rgba(255,255,255,.35)":"none",borderRight:c.endsWith("r")?"2px solid rgba(255,255,255,.35)":"none" }} />
