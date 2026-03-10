@@ -100,6 +100,7 @@ export default function Portfolio() {
   const [lightbox,  setLightbox]  = useState(null);
   const [scrollY,   setScrollY]   = useState(0);
   const [flash,     setFlash]     = useState(false);
+  const [visits,    setVisits]    = useState(null)
   const aboutRef = useRef(null);
   const [aboutVis, setAboutVis] = useState(null);
 
