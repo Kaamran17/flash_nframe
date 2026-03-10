@@ -101,7 +101,7 @@ export default function Portfolio() {
   const [scrollY,   setScrollY]   = useState(0);
   const [flash,     setFlash]     = useState(false);
   const aboutRef = useRef(null);
-  const [aboutVis, setAboutVis] = useState(false);
+  const [aboutVis, setAboutVis] = useState(null);
 
   /* fetch photos */
   useEffect(() => {
@@ -122,10 +122,21 @@ export default function Portfolio() {
     return () => supabase.removeChannel(channel);
   }, []);
 
-  useEffect(() => {
-    const fn = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
+useEffect(() => {
+    async function countVisit() {
+      const { data } = await supabase
+        .from("counter")
+        .select("visits")
+        .eq("id", 1)
+        .single();
+      const newCount = (data?.visits || 0) + 1;
+      await supabase
+        .from("counter")
+        .update({ visits: newCount })
+        .eq("id", 1);
+      setVisits(newCount);
+    }
+    countVisit();
   }, []);
 
   useEffect(() => {
@@ -330,7 +341,7 @@ export default function Portfolio() {
       <footer style={{ padding:"28px 40px",borderTop:"1px solid rgba(255,255,255,.05)" }}>
         <div className="footer-row" style={{ display:"flex",alignItems:"center",justifyContent:"space-between" }}>
           <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.55rem",letterSpacing:"0.15em",color:"rgba(255,255,255,.2)",textTransform:"uppercase" }}>© 2025 Flash N Frame</span>
-          <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.55rem",letterSpacing:"0.15em",color:"rgba(255,255,255,.2)",textTransform:"uppercase" }}>Mysore, India</span>
+          <span style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.55rem",letterSpacing:"0.15em",color:"rgba(255,255,255,.2)",textTransform:"uppercase" }}>   Mysore, India · {visits ? `${visits} visits` : "..."} </span>
         </div>
       </footer>
 
