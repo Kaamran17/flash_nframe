@@ -304,16 +304,20 @@ export default function Portfolio() {
           Open for collaborations, commissioned shoots, and creative projects.
         </p>
         <div style={{ display:"flex",flexDirection:"column",gap:"14px",maxWidth:"460px",margin:"0 auto 40px" }}>
-          {[{ph:"Your name",type:"text"},{ph:"Your email",type:"email"},{ph:"Tell me about your project...",type:"textarea"}].map(({ph,type})=>(
-            type==="textarea"
-              ? <textarea key={ph} placeholder={ph} rows={4} style={inp} />
-              : <input key={ph} type={type} placeholder={ph} style={inp} />
-          ))}
-          <button onClick={triggerFlash} className="cta"
-            style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.72rem",letterSpacing:"0.2em",textTransform:"uppercase",padding:"16px",background:"transparent",border:"1px solid rgba(255,255,255,.4)",color:"rgba(255,255,255,.7)",cursor:"none",transition:"all .3s" }}>
-            Send Message →
-          </button>
-        </div>
+            <input type="text" id="cname" placeholder="Your name" style={inp} />
+            <input type="email" id="cemail" placeholder="Your email" style={inp} />
+            <textarea id="cmsg" placeholder="Tell me about your project..." rows={4} style={inp} />
+            <button className="cta"
+              onClick={() => {
+                const name = document.getElementById("cname").value;
+                const email = document.getElementById("cemail").value;
+                const msg = document.getElementById("cmsg").value;
+                window.location.href = `mailto:purvajanbackups@gmail.com?subject=Shoot Enquiry from ${name}&body=${msg}%0A%0AReply to: ${email}`;
+              }}
+              style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.72rem",letterSpacing:"0.2em",textTransform:"uppercase",padding:"16px",background:"transparent",border:"1px solid rgba(255,255,255,.4)",color:"rgba(255,255,255,.7)",cursor:"pointer",transition:"all .3s" }}>
+              Send Message →
+            </button>
+          </div>
         <div style={{ display:"flex",justifyContent:"center",gap:"12px" }}>
           <a href="https://instagram.com/flash_nframe" target="_blank" rel="noreferrer" className="hover-white"
             style={{ fontFamily:"'DM Mono',monospace",fontSize:"0.65rem",letterSpacing:"0.2em",textTransform:"uppercase",padding:"10px 24px",border:"1px solid rgba(255,255,255,.15)",color:"rgba(255,255,255,.4)",textDecoration:"none",transition:"all .3s" }}>
